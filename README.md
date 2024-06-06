@@ -1,4 +1,4 @@
-# Arduino Menu System
+# Arduino OLED Assignment
 
 This Arduino program implements a menu system on an OLED display, allowing users to navigate between displaying the current time/date and temperature/humidity readings from a DHT11 sensor.
 
