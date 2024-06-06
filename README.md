@@ -1,91 +1,49 @@
-# Project README
+# Arduino Menu System
 
-## Project Overview
+This Arduino program implements a menu system on an OLED display, allowing users to navigate between displaying the current time/date and temperature/humidity readings from a DHT11 sensor.
 
-This project utilizes an OLED display, DHT11 sensor, and an RTC module to display the current time, date, temperature, and humidity. The user can navigate between different display modes using two buttons. The project is built using Arduino, and it leverages several libraries to facilitate the functionalities of the components.
+## Features
 
-## Libraries and Versions
+- Displays a menu with options to view time/date or temperature/humidity.
+- Utilizes buttons to navigate the menu and select options.
+- Displays the current time and date fetched from an RTC module.
+- Retrieves temperature and humidity readings from a DHT11 sensor.
+- Supports navigating back to the main menu from any screen.
 
-The following libraries are used in this project:
+## Hardware Requirements
 
-- **SPI** (comes with Arduino IDE)
-- **Wire** (comes with Arduino IDE)
-- **Adafruit GFX Library** (version 1.10.10)
-- **Adafruit SSD1306** (version 2.5.7)
-- **DHT sensor library** (version 1.4.1)
-- **RTClib** (version 1.12.5)
+- Arduino board (e.g., Arduino Uno)
+- OLED display (128x64 pixels)
+- DHT11 temperature and humidity sensor
+- RTC module (DS3231)
 
-Ensure you have these libraries installed in your Arduino IDE. You can install them via the Library Manager in the Arduino IDE.
+## Libraries Used
 
-## Installation
+- `SPI.h`
+- `Wire.h`
+- `Adafruit_GFX.h`
+- `Adafruit_SSD1306.h`
+- `DHT.h`
+- `RTClib.h`
 
-1. **Install the required libraries:**
-   - Open the Arduino IDE.
-   - Go to **Sketch > Include Library > Manage Libraries...**
-   - Search for each library listed above and click "Install" for each.
+## Setup Instructions
 
-2. **Connect the hardware components:**
-   - **OLED Display:**
-     - Connect VCC to 3.3V
-     - Connect GND to GND
-     - Connect SCL to A5 (or the corresponding I2C SCL pin on your board)
-     - Connect SDA to A4 (or the corresponding I2C SDA pin on your board)
-   - **DHT11 Sensor:**
-     - Connect VCC to 5V
-     - Connect GND to GND
-     - Connect Data Pin to Digital Pin 3
-   - **RTC Module:**
-     - Connect VCC to 5V
-     - Connect GND to GND
-     - Connect SCL to A5 (or the corresponding I2C SCL pin on your board)
-     - Connect SDA to A4 (or the corresponding I2C SDA pin on your board)
-   - **Buttons:**
-     - Connect one side of each button to GND
-     - Connect the other side of Button 1 to Digital Pin 5
-     - Connect the other side of Button 2 to Digital Pin 6
+1. Connect the OLED display, DHT11 sensor, and RTC module to the Arduino board according to the pin configurations in the code.
+2. Install the required libraries (listed above) in your Arduino IDE.
+3. Upload the provided code to your Arduino board.
 
-3. **Upload the code to the Arduino:**
-   - Open the Arduino IDE.
-   - Copy and paste the provided code into a new sketch.
-   - Connect your Arduino board to your computer.
-   - Select the correct board and port from the **Tools** menu.
-   - Click the **Upload** button.
+## Usage
 
-## Functionality
+1. Upon startup, the OLED display will show a menu with options:
+   - **1. Time/Date**: Displays the current time and date.
+   - **2. Temp/Humidity**: Displays the current temperature and humidity readings.
+2. Use the buttons connected to the Arduino (button1, button2, and button3) to navigate between menu options:
+   - Press button1 to move up in the menu.
+   - Press button2 to move down in the menu.
+   - Press button3 to select an option from the menu or return to the menu from any screen.
+3. Follow the on-screen instructions to view the desired information.
 
-### Display Modes
+## Notes
 
-The project has two main display modes:
-
-1. **Time/Date Mode:**
-   - Displays the current time in HH:MM:SS format.
-   - Displays the current day of the week.
-   - Displays the current date in DD/MM/YYYY format.
-
-2. **Temperature/Humidity Mode:**
-   - Displays the current temperature in Celsius.
-   - Displays the current humidity percentage.
-
-### Navigation
-
-- **Button 1:** Navigate up through the menu options.
-- **Button 2:** Navigate down through the menu options.
-
-### Code Explanation
-
-- **Setup:**
-  - Initializes the OLED display, DHT sensor, and RTC module.
-  - Configures the buttons as input with pull-up resistors.
-  
-- **Loop:**
-  - Displays the selected information based on the current menu selection.
-  - Checks for button presses to update the menu selection.
-
-- **Display Functions:**
-  - `displayTimeDate()`: Shows the current time and date on the OLED.
-  - `displayTemperatureHumidity()`: Shows the current temperature and humidity on the OLED.
-  - `displayMenu()`: Shows the menu with available options.
-
-## Conclusion
-
-This project provides a simple and interactive way to display time, date, temperature, and humidity using an OLED display, DHT11 sensor, and RTC module. The easy-to-use navigation buttons make it user-friendly and convenient to switch between display modes.
+- Ensure all required libraries are properly installed in your Arduino IDE to avoid compilation errors.
+- Adjust pin configurations in the code if your hardware setup differs from the default configuration.
