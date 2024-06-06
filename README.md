@@ -12,19 +12,19 @@ This Arduino program implements a menu system on an OLED display, allowing users
 
 ## Hardware Requirements
 
-- Arduino board (e.g., Arduino Uno)
+- Arduino board (e.g., Arduino Zero)
 - OLED display (128x64 pixels)
 - DHT11 temperature and humidity sensor
 - RTC module (DS3231)
 
 ## Libraries Used
 
-- `SPI.h`
-- `Wire.h`
-- `Adafruit_GFX.h`
-- `Adafruit_SSD1306.h`
-- `DHT.h`
-- `RTClib.h`
+- `SPI.h` (1.8.14)
+- `Wire.h` (1.8.14)
+- `Adafruit_GFX.h` (1.11.9)
+- `Adafruit_SSD1306.h` (2.5.10)
+- `DHT.h` (1.4.6)
+- `RTClib.h` (2.1.4)
 
 ## Setup Instructions
 
@@ -42,6 +42,10 @@ This Arduino program implements a menu system on an OLED display, allowing users
    - Press button2 to move down in the menu.
    - Press button3 to select an option from the menu or return to the menu from any screen.
 3. Follow the on-screen instructions to view the desired information.
+
+## Author
+
+Phillip Marek Hansen
 
 ## Notes
 
